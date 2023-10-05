@@ -1,0 +1,71 @@
+body{
+    background-color: rgb(116, 225, 65);
+}
+.container{
+    padding: 40px;
+}
+#form{
+    margin-top: 50px;
+    width: 450px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: rgb(187, 247, 187);
+
+}
+h1{
+    text-align: center;
+    text-decoration: underline;
+    background-color: #00ff08;
+}
+.input-g{
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+}
+input{
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 4px;
+    
+}
+label{
+    font-weight: bold;
+    font-size: 18px;
+    color: black;
+}
+#gender{
+    display: inline-block;
+}
+button{
+    background: linear-gradient(45deg,#00ff08,#aff6a7);
+    color: black;
+    padding: 10px;
+    font-size: 20px;
+    width: 40%;
+    text-align: center;
+    margin-top: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-left: 28%;
+}
+select{
+    padding: 10px;
+    margin-top: 7px;
+    font-size: 16px;
+    border-radius: 20px;
+    border-width: 2px;
+
+}
+ 
+p{
+    font-size: 15px;
+}
+
+#check{
+    display: inline;
+}
+
+
+
+

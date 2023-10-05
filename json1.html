@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <script>
+        // let a='{ "employee":['+
+        //   '{"firstname":"shobi","lastname":"ka"},'+
+        //   ' {"firstname":"shobi1","lastname":"ka1"} ]}'
+
+        //   const a1=JSON.parse(a)
+        //   document.getElementById('demo').innerHTML=a1.employee[0].firstname + " " + a1.employee[1].firstname
+        //   document.getElementById('demo1').innerHTML=a1.employee[1].firstname + " " + a1.employee[0].lastname
+
+     let a='{"employee":['+
+        ' {"first":"shobi","last":"ka"},'+
+        '  {"first":"sho","last":"ka"}]}'
+        const a1=JSON.parse(a)
+        document.getElementById('demo').innerHTML=a1.employee[1].first + " " + a1.employee[0].first
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+.container{
+    margin: 0 auto;
+    margin-top: 70px;
+    margin-left: 40%;
+}
+h1{
+    text-align: center;
+    margin-top: 100px;
+}
+table{
+    border: 2px solid black;
+    margin-top: 5px;
+}
+button{
+    height: 50px;
+    width: 70px;
+    font-size: 20px;
+}
+#textbox{
+    height: 40px;
+    width: 294px;
+    font-size: 18px;
+    border: 2px solid black;
+
+}

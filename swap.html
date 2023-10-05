@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Swap Two Numbers</title>
+</head>
+<body>
+    <h1>Swap Two Numbers</h1>
+    
+    <p>Enter two numbers:</p>
+    <input type="number" id="number1" placeholder="Number 1">
+    <input type="number" id="number2" placeholder="Number 2">
+    
+   
+    
+    
+    <p id="result" onclick="swapNumbers()">Result</p>
+
+    <script>
+        function swapNumbers()
+        {
+            const a=document.getElementById('number1').value 
+            const b=document.getElementById('number2').value
+            if(a=="" && b=="")
+            {
+                document.getElementById('result').innerHTML="enter the number"
+            }
+            else
+            {
+                document.getElementById('number1').value =b
+            document.getElementById('number2').value=a
+            document.getElementById('result').textContent='swapping num :';
+            
+            }
+        }
+//a=10
+//b=2
+//a1=a+b 10+2=12
+// b1=a-b 10-2=8
+//a1=a-b       
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Indian Rupee Denomination Calculator</title>
+</head>
+<body>
+    <h1>Indian Rupee Denomination Calculator</h1>
+    <p>Enter the amount in Indian Rupees:</p>
+    <input type="number" id="amountInput" placeholder="Enter amount">
+    <button onclick="calculateDenomination()">Calculate</button>
+    <div id="denominationResult"></div>
+
+    <script>
+        function calculateDenomination() {
+            const a = document.getElementById("amountInput");
+            const b = parseInt(a.value);
+
+            if (!isNaN(b) && b >= 0) {
+                const c = [2000, 500, 200, 100, 50, 20, 10, 5, 1];
+                const notes = new Array(c.length).fill(0);
+                let remainingAmount = b;
+
+                for (let i = 0; i < c.length; i++) {
+                    if (remainingAmount >= c[i]) {
+                        notes[i] = Math.floor(remainingAmount / c[i]);
+                        remainingAmount %= c[i];
+                    }
+                }
+
+                const denominationResult = document.getElementById("denominationResult");
+                denominationResult.innerHTML = "<h2>Denomination breakdown:</h2>";
+
+                for (let i = 0; i < c.length; i++) {
+                    if (notes[i] > 0) {
+                        denominationResult.innerHTML += `<p>${c[i]} INR notes: ${notes[i]}</p>`;
+                    }
+                }
+            } else {
+                alert("Invalid input. Please enter a valid number.");
+            }
+        }
+    </script>
+</body>
+</html>

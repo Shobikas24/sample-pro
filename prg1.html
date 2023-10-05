@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    
+    <script>
+  let o = "hello ";
+let r= "";
+for (let i = o.length - 1; i >= 0; i--) {
+    r += o[i];
+}
+document.getElementById('demo').innerHTML=r
+
+
+
+
+  
+  
+  
+  // Original String
+const str = "This is a random string";
+
+// Reverse each word of the string
+let rev = str.split(' ')
+                 .map(word=>word.split('').reverse().join(''))
+                 .join(' ');
+
+// Print the reversed string
+document.write(str+"<br>") 
+document.write(rev+"<br>")
+
+
+const f="word of reverse"
+document.write(f+"<br>")
+const g=f.split('')
+ const h=g.reverse()
+ const p=h.join('')
+ document.write(p)
+
+
+
+
+  //string reverse
+
+  let a1="hello"
+let b=""
+  for (let k=a1.length-1;k>=0;k--) {
+    b += a1[k];
+}
+ document.write("<br>"+b)
+
+
+
+ 
+const st=prompt("enter the string")
+const srt = st.split(' ');
+for(let i = 0; i < srt.length; i++){
+    let word = srt[i];
+       let tempWord = "";
+           for(let j = word.length - 1; j >= 0; j--){
+              tempWord = tempWord + word[j];    
+   }
+  srt[i] = tempWord; 
+}
+
+
+const reversedStr = srt.join(' ');
+
+
+document.write("<br>"+reversedStr);
+
+
+
+const z=[1,3,4,6,1]
+let h1=[...new Set(z)];
+document.write(h1)
+    </script>
+</body>
+</html>

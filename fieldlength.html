@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adjust Input Box Length</title>
+    
+</head>
+<body>
+
+<input type="text" id="myInput" placeholder="Type something" oninput="valid(this)">
+
+</body>
+
+<script>
+   function valid(input) {
+        input.style.width = (input.value.length * 10) + 'px'; // Adjust the multiplier based on your needs
+    }
+</script>
+    
+   
+
+</body>
+</html>

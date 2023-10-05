@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Name Validation</title>
+</head>
+<body>
+    <form>
+        <label for="fullName">Full Name with Initial:</label>
+        <input type="text" id="fullName" name="fullName" placeholder="e.g., John D. Doe" required>
+        <button type="button" onclick="validateName()">Submit</button>
+    </form>
+    <p id="validationMessage"></p>
+
+    <script>
+        function validateName() {
+            // Get the input value
+            const nameInput = document.getElementById("fullName").value;
+
+            // Define a regular expression pattern for name validation with an initial
+            const namePattern = /^[A-Z][a-zA-Z]+\s[A-Z]$/;
+
+            // Test the input against the pattern
+            if (namePattern.test(nameInput)) {
+                document.getElementById("validationMessage").textContent = "Valid name format!";
+            } else {
+                document.getElementById("validationMessage").textContent = "Invalid name format. Please use a valid format like 'John D. Doe'.";
+            }
+        }
+    </script>
+</body>
+</html>

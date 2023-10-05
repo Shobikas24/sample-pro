@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Combine and Manipulate Arrays</title>
+</head>
+<body>
+  <script>
+    const a=[1,4,5,8,3]
+    const b=[7,3,0,9,2]
+    const adding=a.concat(b)
+    document.write(adding+"<br><br>")
+    adding.sort()
+    document.write(adding+"<br><br>")
+   
+    let  duplicate= [...new Set(adding)];
+    document.write(duplicate+"<br><br>")
+   
+    let centervalue=Math.floor((duplicate.length)/2)
+    document.write("center value:"+centervalue+"<br><br>")
+     
+     for (var i = 0; i < duplicate.length; i++) {
+                duplicate[i] = centervalue + 2 * (duplicate[i] - centervalue);
+            }
+            document.write("Combined, sorted, and manipulated array: " + duplicate.join(", "));
+           
+    
+  </script>
+</body>
+</html>

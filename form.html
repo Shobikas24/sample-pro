@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/f.css">
+</head>
+<body>
+    <div class="container">
+        <form action="" id="form" name="myform" onchange="valid()">
+            <h1>Register</h1>
+            <div class="input-g">
+                <label for="fname">First name:</label>
+                <input type="text" name="fname" id="fname">
+                <p id="p1" style="color: red;"></p>
+            </div>
+            <div class="input-g">
+                <label for="lname">Last name:</label>
+                <input type="text" name="lname" id="lname">
+                <p id="p9" style="color: red;"></p>
+            </div>
+            <div class="input-g" id="gender">
+                <label for="gender">Gender:</label>
+                <input type="radio" name="gender" value="male" id="male">Male
+                <input type="radio" name="gender" value="female" id="female">Female
+                <input type="radio" name="gender" value="transendre">Transender
+                <p id="p2" style="color: red;"></p>
+            </div>
+            <div class="input-g">
+                <label for="dob">Dob:</label>
+                <input type="text" name="dob" id="dob" placeholder="mm/dd/yyyy">
+                <p id="dobError" style="color: red;"></p>
+            </div>
+            <div class="input-g">
+                <label for="email">Email:</label>
+                <input type="text" name="email" id="email" placeholder="email@gmail.com">
+                <p id="p3" style="color: red;"></p>
+            </div>
+            <div class="input-g">
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password">
+                <p id="p4" style="color: red;"></p>
+            </div>
+            <div class="input-g">
+                <label for="cpassword">Confirm password:</label>
+                <input type="password" name="cpassword" id="cpassword">
+                <p id="p5" style="color: red;"></p>
+            </div>
+        
+        <div class="input-g">
+            <label for="phone">Mobile No:</label>
+            <input type="text" name="phone" id="phone">
+            <p id="p6" style="color: red;"></p>
+        </div>
+
+
+       <div class="input-g" id="check">
+       <label for="area of interest">Area of interest:</label><br>
+       <input type="checkbox" name="cbk" id="php" value="1">Php
+       <input type="checkbox" name="cbk" id="java" value="2">Java
+       <input type="checkbox" name="cbk" id="js" value="3">js
+       <input type="checkbox" name="cbk" id="python" value="4">python
+       <p id="p7" style="color: red;"></p>
+       </div>
+
+
+        <div class="input-g">
+            <label for="city">City:</label>
+            <select name="city" id="city">
+                <option value=""></option>
+                <option value="1">Salem</option>
+                <option value="2">Coimbatore</option>
+                <option value="3">Chennai</option>
+                <option value="4">Erode</option>
+                <option value="5">Other</option>
+
+</select>
+<p id="p8" style="color: red;"></p>
+
+        </div>
+        <button type="button" id="button" onclick="valid()">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function valid(){
+  //first name
+            const fname = document.getElementById('fname').value
+            const fn = /^[A-Za-z]{3,20}$/;
+            if(fname==""){
+                document.getElementById('p1').innerHTML="Name is required!"
+                document.getElementById('fname').style.borderColor="red"
+            }
+            else if(!fn.test(fname)){
+                document.getElementById('p1').innerHTML="Enter your valid name!"
+                document.getElementById('fname').style.borderColor="red"
+            }
+            else{
+                document.getElementById('p1').innerHTML=""
+                document.getElementById('fname').style.borderColor="lightgreen"
+
+            }
+            const lname = document.getElementById('lname').value
+            const ln = /^[A-Za-z ]{1,3}$/;
+
+   //last name
+            if(lname==""){
+                document.getElementById('p9').innerHTML="Last name is required!"
+                document.getElementById('lname').style.borderColor="red"
+
+            }
+            else if(!ln.test(lname)){
+                document.getElementById('p9').innerHTML="Enter your initial!"
+                document.getElementById('lname').style.borderColor="red"
+
+            }
+            else{
+                document.getElementById('p9').innerHTML=""
+                document.getElementById('lname').style.borderColor="lightgreen"
+            }
+
+   //email
+          const email = document.getElementById('email').value
+          const e = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+          if(email==""){
+            document.getElementById('p3').innerHTML="Email is required"
+            document.getElementById('email').style.borderColor="red"
+
+          }
+          else if(!e.test(email)){
+            document.getElementById('p3').innerHTML="Enter valid email"
+            document.getElementById('email').style.borderColor="red"
+         }
+         else{
+            document.getElementById('p3').innerHTML=""
+            document.getElementById('email').style.borderColor="lightgreen"
+         }
+  //gender
+           if(document.getElementById('male').checked)
+            {
+                document.getElementById('p2').innerHTML=""
+            }
+            else if(document.getElementById('female').checked){
+                document.getElementById('p2').innerHTML=""
+
+            }
+            else{
+                document.getElementById('p2').innerHTML="Please select Gender"
+            }
+  //password
+            const p = document.getElementById('password').value
+            const pd= /^[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+            if(p==""){
+                document.getElementById('p4').innerHTML="Enter passsword"
+                document.getElementById('password').style.borderColor="red"
+
+            }
+            else if(!pd.test(p)){
+                document.getElementById('p4').innerHTML="Enter valid password"
+                document.getElementById('password').style.borderColor="red"
+            }
+            else{
+                document.getElementById('p4').innerHTML=""
+                document.getElementById('password').style.borderColor="lightgreen"
+            }
+  //confirm password
+            const cp = document.getElementById('cpassword').value
+
+
+            if(cp==""){
+                document.getElementById('p5').innerHTML="Enter passsword!"
+                document.getElementById('cpassword').style.borderColor="red"
+
+            }
+            else if(cp!=p){
+                document.getElementById('p5').innerHTML="Enter correct password!"
+                document.getElementById('cpassword').style.borderColor="red"
+            }
+            else{
+                document.getElementById('p5').innerHTML=""
+                document.getElementById('cpassword').style.borderColor="lightgreen"
+            }
+
+    //phone num
+            const ph = document.getElementById('phone').value
+            const pho = /^[0-9]{10}$/;
+
+            if(ph==""){
+                document.getElementById('p6').innerHTML="Enter phone number!"
+                document.getElementById('phone').style.borderColor="red"
+
+            }
+            else if(!pho.test(ph)){
+                document.getElementById('p6').innerHTML="Enter valid number!"
+                document.getElementById('phone').style.borderColor="red"
+            }
+            else{
+                document.getElementById('p6').innerHTML=""
+                document.getElementById('phone').style.borderColor="lightgreen"
+            }
+    //dropdown
+      const drop = document.getElementById('city')
+       if(drop.value==""){
+                document.getElementById('p8').innerHTML="Select city !"
+            }
+            else{
+                document.getElementById('p8').innerHTML=""
+
+            }
+    //checkbox 
+              var total = 0;
+              for(let i=0;i<document.myform.cbk.length;i++){
+                if(document.myform.cbk[i].checked){
+                    total=total+1;
+                }
+              }
+              if(total>0 && total<=2){
+                document.getElementById('p7').innerHTML=""
+              }
+              else{
+                document.getElementById('p7').innerHTML="Select any 1 or 2"
+
+              }
+
+     //dob
+     
+     const dobValue = document.getElementById("dob").value;
+            const dateRegex = /^(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])\/\d{4}$/;
+
+            if (!dateRegex.test(dobValue)) {
+                document.getElementById("dobError").textContent = "Please enter a valid date in MM/DD/YYYY format";
+                return;
+            }
+
+            const [month, day, year] = dobValue.split('/');
+            const inputDate = new Date(`${year}-${month}-${day}`);
+            const currentDate = new Date();
+            const minYear = currentDate.getFullYear() - 18;
+            const minDate = new Date(minYear, currentDate.getMonth(), currentDate.getDate());
+
+            if (inputDate > minDate) {
+                document.getElementById("dobError").textContent = "You must be at least 18 years old.";
+            } else {
+                document.getElementById("dobError").textContent = "";
+            }
+
+        }
+            
+        
+   
+
+
+    </script>
+</body>
+</html>

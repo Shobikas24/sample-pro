@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div class="cointainer">
+    <div class="increment">
+        <button onclick="increment()" id="inc">+</button>
+    </div>
+    <div class="total-count">
+        <input type="number" style="width: 40px;" id="number" value="0">
+    </div>
+    <div class="decrement">
+        <button onclick="decrement()">-</button>
+    </div>
+   </div>
+
+
+   <script>
+    function increment() {
+
+  var a =document.getElementById('number').value;
+ 
+  a++;
+  document.getElementById('number').value = a;
+}
+
+function decrement() {
+
+  var a=document.getElementById('number').value
+  a--
+  document.getElementById('number').value=a
+}
+   </script>
+</body>
+</html>

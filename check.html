@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <form action="" name="myform">
+    <!-- <div class="input-g" id="check">
+        <label for="area of interest">Area of interest:</label><br>
+        <input type="checkbox" name="cbk" id="php" value="1">Php
+        <input type="checkbox" name="cbk" id="java" value="2">Java
+        <input type="checkbox" name="cbk" id="js" value="3">js
+        <input type="checkbox" name="cbk" id="python" value="4">Pyhton
+     </div>
+     <button type="button" onclick="fun()">Submit</button>
+    </form>
+   <script>
+   function fun(j){
+            var total = 0;
+              for(let i=0;i<document.myform.cbk.length;i++){
+                if(document.myform.cbk[i].checked){
+                    total=total+1;
+                }
+              }
+              if(total>0 && total<=2){
+                alert("validation done.")
+              }
+              else{
+                alert("please select atleast 2" )
+
+              }
+        }
+   </script> -->
+   <div class="inputs" id="checkbox0">
+    <label for="course">Course</label><br><br>
+    <input type="checkbox" name="cbk" id="Arts and science" value="1">Arts and science
+    <input type="checkbox" name="cbk" id="Nursing" value="2">Nursing
+    <input type="checkbox" name="cbk" id="Engineering" value="3">Engineering
+    <input type="checkbox" name="cbk" id="Medical" value="4">Medical
+    <div class="error" id="checkbox-err" style="color: red;"></div>          
+  </div>
+  <button type="button" onclick="fun()">Submit</button>
+  </form>
+     <script>
+      function fun(){
+        var total = 0;
+        for(i=0;i<document.myform.cbk.length;i++){
+          if(document.myform.cbk[i].checked){
+          total=total+1;
+        }
+      }
+       if(total<2){
+        document.getElementById('checkbox-err').innerHTML="select any 2"
+       }
+       else{
+        document.getElementById('checkbox-err').innerHTML=""
+
+       }
+      }
+     </script>
+</body>
+</html>

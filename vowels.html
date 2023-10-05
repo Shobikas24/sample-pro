@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="vow">
+    <button onclick="valid()">check</button>
+</body>
+<script>
+    function valid()
+    {
+        var tex=document.getElementById('vow').value 
+        var vowels=0;
+        var consonants=0;
+        for(var i=0;i<tex.length;i++)
+        {
+            var con=tex[i]
+            switch(con)
+            {
+                case 'a':
+                case 'e':
+                case 'i':
+                case 'o':
+                case 'u':
+                case 'A':
+                case 'E':
+                case 'I':
+                case 'O':
+                case 'U':
+                    vowels++;
+                    break;
+                default: 
+                if (/^[a-z]$/.test(con)) {
+                    consonants++;
+                }
+                break;
+            }
+        }
+        document.write("vowels :"+vowels+"<br>")
+        document.write("consonants :"+consonants)
+    }
+</script>
+</html>
